@@ -1,0 +1,134 @@
+@import url(//db.onlinewebfonts.com/c/3a025ae92e6446cec24efcb6d29e5bf3?family=Malgun+Gothic);
+@import url(https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css);
+
+/* 박스 모델 */
+body {
+    box-sizing: border-box;
+}
+/* 리셋 모듈 */
+.resetList {
+    padding-left: 0;
+    margin: 0;
+    list-style: none;
+}
+.resetMargin {
+    margin: 0;
+}
+.resetBox {
+    margin: 0;
+    padding: 0;
+    border: none;
+}
+.button {
+    cursor: pointer;
+}
+/* 숨김 컨텐츠 */
+.a11yHidden {
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    clip: polygon(0 0, 0 0, 0 0);
+}
+/* 하이퍼 링크 스타일 */
+a {
+    color: inherit;
+    text-decoration: none;
+}
+/* 모바일 & 데스크탑 공통 영역 */
+header {
+    position: relative;
+    background-color: pink;
+    height:15vh;
+    width: 100%;
+}
+.headerHeading a {
+    display: block;
+    padding: 30px;
+    background: url(../images/logo/Logo1x.svg) no-repeat;
+    background-position: 50% 50%;
+    text-indent: 1000%;
+    width: 164px;
+    white-space: nowrap;
+    overflow: hidden;
+}
+.btnMenuopen {
+    position: absolute;
+    padding: 35px;
+    top: 0;
+    right: 0;
+    display: inline-block;
+    background-color: orange;
+}
+.btnBgrd {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    width: 30px;
+    height: 30px;
+    background-color: green;
+}
+.burgerBar {
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 15%;
+    background-color: #fff;
+}
+.burgerTop{
+    top: 0%;
+}
+.burgerMiddle{
+    top: 50%;
+    transform: translateY(-50%);
+}
+.burgerBottom {
+    top: 100%;
+    transform: translateY(-100%);
+}
+/*  공통 네비게이션 */
+.menuList {
+    display: inline-block;
+    background-color: rgba(0, 0, 0, 0.8);
+    color: palegoldenrod;
+    height: 1000vh;
+    width: 1000vw;
+}
+.btnMenuopen:active {
+    transform: translateX(105%);
+}
+.menuItem {
+    border-bottom: 1px solid palegoldenrod;
+    padding: 1.6em;
+}
+/* .menuAct {
+    transform: translateX(-105%)
+} */
+@media screen and (max-width: 575px) {
+    .header,
+    .navigation,
+    .main {
+        width: 100%;
+    }
+    header {
+        background-color: pink;
+        height: 11vh;
+    }
+}
+
+@media screen and (min-width: 1270px) {
+    .header,
+    .navigation,
+    .main {
+        width: 100%;
+    }
+    .header {
+        background-color: pink;
+        height:10vh;
+        width: 100%;
+    }
+}
