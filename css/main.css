@@ -1,0 +1,80 @@
+@import url("https://spoqa.github.io/spoqa-han-sans/css/SpoqaHanSans-kr.css");
+
+/* 기본 설정 */
+html {
+    font-size: 10px;
+}
+
+body {
+    margin: 0;
+}
+dd {
+    margin: 0;
+}
+
+/* 초기화 */
+.btnNone {
+    padding: 0;
+    border: 0;
+    background-color: transparent;
+}
+
+.resetList {
+    padding-left: 0;
+    list-style-type: none;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+a {
+    color: black;
+    text-decoration: none;
+}
+
+/* 유틸리티 */
+.a11yHidden {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    clip: rect(0, 0, 0, 0);
+    clip-path: polygon(0 0, 0 0, 0 0);
+}
+
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 30;
+}
+
+.headerHeading {
+    margin: 0;
+    border-bottom: 1px solid #E0E0E0;
+}
+
+@keyframes logoAni {
+    0% {
+        transform: translateX(-100%);
+    }
+
+    80% {
+        transform: translateX(1%);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+.headerHeading a {
+    animation: logoAni .5s;
+    width: 164px;
+    display: block;
+    padding: 2.5rem;
+    background-image: url(../images/Logo.svg);
+    background-size: 80%;
+    background-repeat: no-repeat;
+    background-position: 50% 50%;
+    text-indent: 120%;
+    overflow: hidden;
+    white-space: nowrap;
+}
