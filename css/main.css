@@ -39,16 +39,19 @@ a {
     clip: rect(0, 0, 0, 0);
     clip-path: polygon(0 0, 0 0, 0 0);
 }
+.clearfix::after {
+    content: "";
+    display: block;
+    clear: both;
+}
 
+/* 공통 로고 */
 .header {
     position: fixed;
     width: 100%;
     z-index: 30;
-}
-
-.headerHeading {
-    margin: 0;
     border-bottom: 1px solid #E0E0E0;
+
 }
 
 @keyframes logoAni {
@@ -65,6 +68,10 @@ a {
     }
 }
 
+.headerHeading {
+    margin: 0;
+}
+
 .headerHeading a {
     animation: logoAni .5s;
     width: 164px;
@@ -77,4 +84,55 @@ a {
     text-indent: 120%;
     overflow: hidden;
     white-space: nowrap;
+}
+
+/* 공통 네비게이션 */
+@keyframes menuAni {
+    0% {
+        transform: translateX(100%);
+    }
+
+    100% {
+        transform: none;
+    }
+}
+
+.btnMenuopen {
+    animation: menuAni .5s;
+    position: absolute;
+    width: 85px;
+    height: 78px;
+    text-align: center;
+    top: 0;
+    right: 0;
+}
+
+.btnMenuopen:hover {
+    background-color: #eee;
+}
+
+
+
+.burgerBar {
+    display: block;
+    width: 30%;
+    height: 5%;
+    background-color: #525254;
+    position: absolute;
+}
+
+.burgerTop {
+    top: 33%;
+    left: 50%;
+
+}
+
+.burgerMiddle {
+    top: 44%;
+    left: 50%;
+}
+
+.burgerBottom {
+    top: 55%;
+    left: 50%;
 }
