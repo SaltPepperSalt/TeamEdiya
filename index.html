@@ -15,15 +15,15 @@
     <div class="container">
         <header class="header">
             <h1 class="headerHeading"><a href="./index.html">이디야 커피</a></h1>
-    
+
             <nav class="navigation" aria-labelledby="navigationHeading">
                 <h2 class="navigationHeading a11yHidden" id="navigationHeading">메인메뉴</h2>
                 <button class="btnMenuopen btnNone" type="button" aria-label="메인메뉴 오픈">
-                    <div class="btnBgrd">
+                    <span class="btnBgrd">
                         <span class="burgerBar burgerTop"></span>
                         <span class="burgerBar burgerMiddle"></span>
                         <span class="burgerBar burgerBottom"></span>
-                    </div>
+                    </span>
                 </button>
                 <ul class="menuList resetList">
                     <li class="menuItem"><a href="#" class="menuLink">메뉴</a></li>
@@ -45,24 +45,23 @@
                         <h3 class="a11yHidden">
                             ICED 벚꽃라떼
                         </h3>
-                        <!--figure 태그가 버튼의 자식요소로 안들어가짐 그래서 일단 a태그로 바꿨습니다  -->
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/ice/02_Ice_Cherry_Blossom_Latte.png" alt=""
-                                    class="productImg">
-                                <!-- 중복정보가 많은것 같아 히든처리를 해봤습니다.. -->
-                                <figcaption aria-hidden="true">
-                                    ICED 벚꽃라떼
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/ice/02_Ice_Cherry_Blossom_Latte.png" alt="초콜릿 토핑이 올라간 차가운 핑크빛 라떼"
+                                class="productImg">
+                            <figcaption aria-hidden="true">
+                                ICED 벚꽃라떼
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" type="button" aria-label="ICED 벚꽃라떼 상세정보 열기">
+                        </button>
                         <div class="infoCard" aria-hidden="true">
-    
+
                             <dl class="productMain">
                                 <dt class="productHeading">ICED 벚꽃라떼<span class="enTitle">Cherry
                                         Blossom Latte</span>
                                 </dt>
-                                <dd class="productInfo">은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
+                                <dd class="productInfo" id="productInfo--IcedBlossom">은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛
+                                    라떼</dd>
                             </dl>
                             <dl class="productNutrition">
                                 <dt class="nutrition">칼로리</dt>
@@ -83,24 +82,23 @@
                         </div>
                     </article>
                 </li>
-    
-    
+
+
                 <li>
                     <article class="product">
                         <h3 class="a11yHidden">
                             HOT 벚꽃라떼
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/hot/02_hot_Cherry_Blossom_Latte.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-    
-                                    HOT 벚꽃라떼
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/hot/02_hot_Cherry_Blossom_Latte.png" alt="초콜릿 토핑이 올라간 따뜻한 핑크빛 라떼"
+                                class="productImg">
+                            <figcaption aria-hidden="true">
+                                HOT 벚꽃라떼
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" role="button" aria-label="HOT 벚꽃라떼 상세정보 열기" href="#">
+                            
+                        </button>
                         <div class="infoCard" aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">HOT 벚꽃라떼<span class="enTitle">Cherry
@@ -108,7 +106,7 @@
                                 </dt>
                                 <dd class="productInfo">은은한 벚꽃향과 라즈베리 화이트 초콜릿 토핑이 올라간 핑크빛 라떼</dd>
                             </dl>
-    
+
                             <dl class="productNutrition">
                                 <dt class="nutrition">칼로리</dt>
                                 <dd class="content">430kcal</dd>
@@ -123,7 +121,8 @@
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">0mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>
@@ -132,17 +131,13 @@
                         <h3 class="a11yHidden">
                             ICED 브라우니 쇼콜라
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/ice/03_Ice_Brownie_Chocolate.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-    
-                                    ICED 브라우니 쇼콜라
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/ice/03_Ice_Brownie_Chocolate.png" alt="휘핑크림과 브라우니를 곁들인 차가운 초콜릿 음료" class="productImg">
+                            <figcaption aria-hidden="true">ICED 브라우니 쇼콜라</figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" type="button" aria-label="ICED 브라우니 쇼콜라 상세정보 열기">
+
+                        </button>
                         <div class="infoCard" aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">ICED 브라우니 쇼콜라<span class="enTitle">Brownie Chocolate</span>
@@ -151,7 +146,7 @@
                                     초콜릿
                                     음료</dd>
                             </dl>
-    
+
                             <dl class="productNutrition">
                                 <dt class="nutrition">칼로리</dt>
                                 <dd class="content">503kcal</dd>
@@ -166,7 +161,8 @@
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">12mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>
@@ -175,17 +171,14 @@
                         <h3 class="a11yHidden">
                             HOT 브라우니 쇼콜라
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/hot/04_Hot_Brownie_Chocolate.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-    
-                                    HOT 브라우니 쇼콜라
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/hot/04_Hot_Brownie_Chocolate.png" alt="휘핑크림과 브라우니를 곁들인 따뜻한 초콜릿 음료" class="productImg">
+                            <figcaption aria-hidden="true">
+                                HOT 브라우니 쇼콜라
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" role="button" aria-label="HOT 브라우니 쇼콜라 상세정보 열기" href="#">
+                        </button>
                         <div class="infoCard" aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">HOT 브라우니 쇼콜라<span class="enTitle">Brownie Chocolate</span>
@@ -194,7 +187,7 @@
                                     초콜릿
                                     음료</dd>
                             </dl>
-    
+
                             <dl class="productNutrition">
                                 <dt class="nutrition">칼로리</dt>
                                 <dd class="content">503kcal</dd>
@@ -209,7 +202,8 @@
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">12mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>
@@ -218,17 +212,15 @@
                         <h3 class="a11yHidden">
                             제주청귤 오리지널
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/Tangerine/05_Jeju_Green_Tangerine_Tea.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-    
-                                    제주청귤 오리지널
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/Tangerine/05_Jeju_Green_Tangerine_Tea.png" alt="제주청귤로 만든 과일차"
+                                class="productImg">
+                            <figcaption aria-hidden="true">
+                                제주청귤 오리지널
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" type="button" aria-label="제주청귤 오리지널 상세정보 열기">
+                        </button>
                         <div class="infoCard" aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">제주청귤 오리지널<span class="enTitle">Jeju
@@ -238,7 +230,7 @@
                                     과일차
                                 </dd>
                             </dl>
-    
+
                             <dl class="productNutrition">
                                 <dt class="nutrition">칼로리</dt>
                                 <dd class="content">218kcal</dd>
@@ -246,14 +238,15 @@
                                 <dd class="content">51g</dd>
                                 <dt class="nutrition">단백질</dt>
                                 <dd class="content">0g</dd>
-                                <dt class="nutrition">포화지방</dt>     
+                                <dt class="nutrition">포화지방</dt>
                                 <dd class="content">0.1g</dd>
                                 <dt class="nutrition">나트륨</dt>
                                 <dd class="content">4mg</dd>
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">0mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>
@@ -262,17 +255,16 @@
                         <h3 class="a11yHidden">
                             제주청귤 블라썸
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/Tangerine/06-Jeju_Green_Tangerine_Blossom.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-    
-                                    제주청귤 블라썸
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/Tangerine/06-Jeju_Green_Tangerine_Blossom.png" alt="제주청귤과 복숭아,포도등으로 우린 블렌딩티"
+                                class="productImg">
+                            <figcaption aria-hidden="true">
+                                제주청귤 블라썸
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" type="button" aria-label="제주청귤 블라썸 상세정보 열기">
+                            
+                        </button>
                         <div class="infoCard" aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">제주청귤 블라썸<span class="enTitle">Jeju
@@ -295,27 +287,25 @@
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">0mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>
-    
+
                 <li>
                     <article class="product">
                         <h3 class="a11yHidden">
                             석류 오리지널
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/Pomegranate/07_Pomegranate_Tea.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-    
-                                    석류 오리지널
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/Pomegranate/07_Pomegranate_Tea.png" alt="석류로 만든 과일차" class="productImg">
+                            <figcaption aria-hidden="true">
+                                석류 오리지널
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" type="button" aria-label="석류 오리지널 상세정보 열기">
+                        </button>
                         <div class="infoCard" aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">석류 오리지널<span class="enTitle">Pomegranate Tea</span>
@@ -339,7 +329,8 @@
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">0mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>
@@ -348,16 +339,15 @@
                         <h3 class="a11yHidden">
                             석류 애플라임
                         </h3>
-                        <a class="infoButton" role="button" aria-label="상세 정보 열기" href="#">
-                            <figure>
-                                <img src="./images/1X/Pomegranate/08_Pomegranate_Apple_Lime.png" alt=""
-                                    class="productImg">
-                                <figcaption aria-hidden="true">
-                                    석류 애플라임
-    
-                                </figcaption>
-                            </figure>
-                        </a>
+                        <figure>
+                            <img src="./images/1X/Pomegranate/08_Pomegranate_Apple_Lime.png" alt="석류와 다양한 과일, 꽃 샴페인을 우린 블렌딩티"
+                                class="productImg">
+                            <figcaption aria-hidden="true">
+                                석류 애플라임
+                            </figcaption>
+                        </figure>
+                        <button class="infoButton btnNone" type="button" aria-label=" 석류 애플라임 상세정보 열기">
+                        </button>
                         <div class="infoCard " aria-hidden="true">
                             <dl class="productMain">
                                 <dt class="productHeading">석류 애플라임<span class="enTitle">Pomegranate Apple Lime</span>
@@ -367,7 +357,7 @@
                                     블렌딩티
                                 </dd>
                             </dl>
-    
+
                             <dl class="productNutrition">
                                 <dt class="nutrition">칼로리</dt>
                                 <dd class="content">220kcal</dd>
@@ -382,7 +372,8 @@
                                 <dt class="nutrition">카페인</dt>
                                 <dd class="content">0mg</dd>
                             </dl>
-                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span aria-hidden="true">×</span></button>
+                            <button class="closeinfoButton btnNone" title="상세정보 닫기"><span
+                                    aria-hidden="true">×</span></button>
                         </div>
                     </article>
                 </li>

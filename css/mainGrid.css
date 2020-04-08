@@ -52,7 +52,6 @@ a {
     z-index: 30;
     background-color: rgba(255, 255, 255, 0.4)
 }
-
 @keyframes headingBar{
     0% {
         transform:translateY(-78px) ;
@@ -61,7 +60,7 @@ a {
         transform:none;
     }
 }
-.header::after {
+.headerHeading::after {
     animation: headingBar 0.4s;
     content: "";
     display: block;
@@ -69,14 +68,13 @@ a {
     height: 1px;
 }
 
-
 @keyframes logoAni {
     0% {
         transform: translateX(-100%);
     }
 
     80% {
-        transform: translateX(5%);
+        transform: translateX(1%);
     }
 
     100% {
@@ -228,35 +226,31 @@ a {
 .productList {
     margin: 0 auto;
     padding: 10rem 2rem 2rem;
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0,400px));
+    grid-template-rows: repeat(4, 360px);
+    gap: 30px 30px;
 }
 
 @media screen and (min-width: 575px) {
     .productList {
         max-width: 830px;
     }
-    .productList li{
-        width: calc((100% - 20px) / 2);
-    }
-    .product{
-        max-width: 400px;
-    }
 }
 @media screen and (max-width: 574px) {
-    .productList li{
-        width: 100%;
+    .productList{
+        grid-template-columns: 100%;
     }
-
 }
 .productList li {
-    float: left;
     margin-bottom: 20px;
+    width: 100%;
 }
 .product {
     background-color: #f5f5f5;
     position: relative;
     text-align: center;
     height: 360px;
-    
 }
 
 .productList li:nth-child(2n-1){
@@ -293,7 +287,9 @@ a {
     position: absolute;
     top: 0;
     left: 0;
+    cursor: pointer;
 }
+
 
 figure {
     margin: 0;
@@ -403,35 +399,34 @@ figcaption {
 }
 
 .productNutrition {
-    /* column-width: 50%; */
-    column-count: 2;
-    column-rule: 1px solid black;
     font-size: 1.3rem;
     background-color: #F8F8F8;
-    padding: 2rem;
     margin: 0;
     position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
+    display: grid;
+    grid-template: repeat(3, 1fr) / repeat(4, 1fr);
+    padding: 2rem 1.5rem;
     box-sizing: border-box;
 }
 
 .nutrition {
-    width: 50%;
-    float: left;
     line-height: 1.5;
     box-sizing: border-box;
-    padding-left: 1.5rem;
+    padding-left: 2rem;
+    
 }
 
 .content {
-    float: left;
-    width: 50%;
     text-align: left;
     line-height: 1.5;
     box-sizing: border-box;
     padding-left: 1em;
+}
+.content:nth-child(4n-2){
+    border-right: 1px solid black;
 }
 .content::after{
     content: ")";
