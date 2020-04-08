@@ -66,6 +66,7 @@ infoOpen.click(function (e) {
 // 메뉴 닫기 버튼의 tabindex를 비활성화해주는 것
 infoClose.click(function (e) {
     $(this).parent().css('transition', 'opacity .5s linear, z-index 0s .5s')
+    // $(this).parent().css('transition', 'opacity .5s linear, z-index 1s')
     $(this).parent().removeClass('infoOpen');
     $(this).parent().attr('aria-hidden', 'true')
     $(this).attr('tabindex', '-1');
