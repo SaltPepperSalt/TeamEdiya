@@ -6,7 +6,8 @@ var menuClose = $('.btnMenuClose');
 var menuItem = $('.menuItem a');
 var infoOpen = $('.infoButton');
 var infoClose = $('.closeinfoButton');
-var infoCard = $('.infoCard');
+var infoCard = $('.productBack');
+
 
 // tabindex랑 aria-hidden 속성을 추가해주는 과정
 menuItem.attr('tabindex', '-1');
@@ -61,6 +62,12 @@ infoOpen.click(function (e) {
     $(this).next().children('button').attr('tabindex', '0');
 
 });
+infoOpen.hover(function (e) {
+    $(this).siblings('.productFront').children('productImg').css('transform','none');
+})
+infoOpen.mouseout(function () {
+    $(this).siblings('.productFront').children('productImg').css('transform','scale(.85)');
+})
 
 // 상세정보 닫기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 뺏은 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 비활성화해주는 것
@@ -68,7 +75,7 @@ infoClose.click(function (e) {
     $(this).parent().css('transition', 'opacity .5s linear, z-index 0s .5s')
     // $(this).parent().css('transition', 'opacity .5s linear, z-index 1s')
     $(this).parent().removeClass('infoOpen');
-    $(this).parent().attr('aria-hidden', 'true')
+    $(this).parent().attr('aria-hidden', 'true');
     $(this).attr('tabindex', '-1');
 });
 // 스크롤 업 버튼을 누르면 맨 위로 가게 해주는것

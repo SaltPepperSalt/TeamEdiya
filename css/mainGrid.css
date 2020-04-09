@@ -17,6 +17,9 @@ dd {
 }
 
 /* 초기화 */
+.resetMargin {
+    margin: 0;
+}
 .btnNone {
     padding: 0;
     border: 0;
@@ -36,9 +39,7 @@ a {
     text-decoration: none;
 }
 
-.resetMargin {
-    margin: 0;
-}
+
 
 /* 유틸리티 */
 .a11yHidden {
