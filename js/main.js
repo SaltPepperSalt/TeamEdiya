@@ -15,10 +15,18 @@ menuItem.attr('aria-hidden', 'true');
 menuClose.attr('tabindex', '-1');
 menuClose.attr('aria-hidden', 'true');
 infoClose.attr('tabindex', '-1');
-
+$(function () {
+    $(document).tooltip();
+});
+// menulist 진입시 esc키로 탈출
+menuItem.keydown(function (e) {
+    if(e.keyCode === 27){
+        menuClose.click();
+    }
+});
 // 부모(navigation)에 isAct를 추가하고, menuItem에 tabindex, aria-hidden 속성값을 변경해주고 
 // menuclose버튼이랑 첫 메뉴리스트에서 키를 눌렀을때 실행되는 함수 명시
-menuOpen.click(function (e) {
+menuOpen.click(function () {
     $(this).parent().addClass('isAct');
     menuItem.attr('tabindex', '0');
     menuItem.attr('aria-hidden', 'false');
@@ -40,6 +48,8 @@ var handleKeyDownFirstLink = function (e) {
     if (e.shiftKey && e.keyCode === 9) {
         e.preventDefault();
         menuClose.focus();
+    }else if(e.keyCode === 27) {
+        menuClose.click();
     }
 };
 // 메뉴 닫기 버튼을 눌렀을 때, 부모에게서 isAct 클래스를 뺏고
@@ -50,11 +60,19 @@ menuClose.click(function (e) {
     menuClose.attr('tabindex', '-1');
     menuItem.attr('aria-hidden', 'true');
     menuClose.attr('aria-hidden', 'true');
-
+    menuOpen.focus();
 });
+// 메뉴 오픈버튼 포커스나 마우스 오버시 이미지 크기 변화
+infoOpen.on('focus mouseover', function () {
+    $(this).siblings('.productFront').children('.productImg').css('transform', 'none');
+})
+infoOpen.on('blur mouseout', function () {
+    $(this).siblings('.productFront').children('.productImg').css('transform', 'scale(.85)');
+})
+
 // 상세정보 열기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 추가한 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 활성화해주는 것
-infoOpen.click(function (e) {
+infoOpen.click(function () {
 
     $(this).next().css('transition', 'opacity .5s linear');
     $(this).next().addClass('infoOpen');
@@ -62,18 +80,11 @@ infoOpen.click(function (e) {
     $(this).next().children('button').attr('tabindex', '0');
 
 });
-infoOpen.hover(function (e) {
-    $(this).siblings('.productFront').children('productImg').css('transform','none');
-})
-infoOpen.mouseout(function () {
-    $(this).siblings('.productFront').children('productImg').css('transform','scale(.85)');
-})
 
 // 상세정보 닫기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 뺏은 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 비활성화해주는 것
-infoClose.click(function (e) {
+infoClose.click(function () {
     $(this).parent().css('transition', 'opacity .5s linear, z-index 0s .5s')
-    // $(this).parent().css('transition', 'opacity .5s linear, z-index 1s')
     $(this).parent().removeClass('infoOpen');
     $(this).parent().attr('aria-hidden', 'true');
     $(this).attr('tabindex', '-1');
