@@ -54,7 +54,8 @@
     animation: menuAni .5s 0.4s backwards;
 }
 
-.btnMenuopen:hover {
+.btnMenuopen:hover,
+.btnMenuopen:focus {
     background-color: #eee;
 }
 

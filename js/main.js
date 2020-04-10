@@ -15,6 +15,7 @@ menuItem.attr('aria-hidden', 'true');
 menuClose.attr('tabindex', '-1');
 menuClose.attr('aria-hidden', 'true');
 infoClose.attr('tabindex', '-1');
+infoOpen.attr('aria-pressed','false');
 $(function () {
     $(document).tooltip();
 });
@@ -73,7 +74,7 @@ infoOpen.on('blur mouseout', function () {
 // 상세정보 열기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 추가한 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 활성화해주는 것
 infoOpen.click(function () {
-
+    $(this).attr('aria-pressed', 'true');
     $(this).next().css('transition', 'opacity .5s linear');
     $(this).next().addClass('infoOpen');
     $(this).next().attr('aria-hidden', 'false');
@@ -84,6 +85,7 @@ infoOpen.click(function () {
 // 상세정보 닫기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 뺏은 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 비활성화해주는 것
 infoClose.click(function () {
+    $(this).siblings('.infoButton').attr('aria-pressed', 'false');
     $(this).parent().css('transition', 'opacity .5s linear, z-index 0s .5s')
     $(this).parent().removeClass('infoOpen');
     $(this).parent().attr('aria-hidden', 'true');
