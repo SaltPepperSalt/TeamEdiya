@@ -109,10 +109,7 @@
         max-width: 830px;
     }
     .productList li{
-        width: calc((100% - 20px) / 2);
-    }
-    .product{
-        max-width: 400px;
+        width: calc((100% - 30px) / 2);
     }
 }
 @media screen and (max-width: 574px) {
