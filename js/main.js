@@ -12,16 +12,14 @@ var infoCard = $('.productBack');
 // tabindex랑 aria-hidden 속성을 추가해주는 과정
 menuItem.attr('tabindex', '-1');
 menuItem.attr('aria-hidden', 'true');
-menuClose.attr('tabindex', '-1');
-menuClose.attr('aria-hidden', 'true');
 infoClose.attr('tabindex', '-1');
-infoOpen.attr('aria-pressed','false');
+infoOpen.attr('aria-pressed', 'false');
 $(function () {
     $(document).tooltip();
 });
 // menulist 진입시 esc키로 탈출
 menuItem.keydown(function (e) {
-    if(e.keyCode === 27){
+    if (e.keyCode === 27) {
         menuClose.click();
     }
 });
@@ -49,7 +47,7 @@ var handleKeyDownFirstLink = function (e) {
     if (e.shiftKey && e.keyCode === 9) {
         e.preventDefault();
         menuClose.focus();
-    }else if(e.keyCode === 27) {
+    } else if (e.keyCode === 27) {
         menuClose.click();
     }
 };
@@ -74,22 +72,20 @@ infoOpen.on('blur mouseout', function () {
 // 상세정보 열기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 추가한 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 활성화해주는 것
 infoOpen.click(function () {
+    var $el = $(this).next('.productBack');
     $(this).attr('aria-pressed', 'true');
-    $(this).next().css('transition', 'opacity .5s linear');
-    $(this).next().addClass('infoOpen');
-    $(this).next().attr('aria-hidden', 'false');
-    $(this).next().children('button').attr('tabindex', '0');
-
+    $el.removeAttr('hidden');
+    setTimeout(function(){$el.addClass('infoOpen')},100);
 });
 
 // 상세정보 닫기 버튼을 누르면 infocard에 transition 속성을 변화시키고 infoOpen 클래스를 뺏은 다음에 aria-hidden 속성을 바꿔주고
 // 메뉴 닫기 버튼의 tabindex를 비활성화해주는 것
 infoClose.click(function () {
+    var $el = $(this).parent();
     $(this).siblings('.infoButton').attr('aria-pressed', 'false');
-    $(this).parent().css('transition', 'opacity .5s linear, z-index 0s .5s')
-    $(this).parent().removeClass('infoOpen');
-    $(this).parent().attr('aria-hidden', 'true');
-    $(this).attr('tabindex', '-1');
+    $el.removeClass('infoOpen');
+    setTimeout(function(){$el.attr('hidden','hidden')},500);
+    // $(this).attr('tabindex', '-1');
 });
 // 스크롤 업 버튼을 누르면 맨 위로 가게 해주는것
 $('.scrollUp').click(function () {
