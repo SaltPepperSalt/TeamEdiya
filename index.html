@@ -24,16 +24,16 @@
     <div class="container">
         <header class="header">
             <h1 class="headerHeading resetMargin"><a href="https://www.ediya.com/">이디야 커피</a></h1>
-
-            <nav class="navigation" aria-labelledby="navigationHeading">
+            <button class="btnMenuopen btnNone" type="button" aria-label="메인메뉴 오픈" title="메인메뉴 열기">
+                <span class="btnBgrd">
+                    <span class="burgerBar burgerTop"></span>
+                    <span class="burgerBar burgerMiddle"></span>
+                    <span class="burgerBar burgerBottom"></span>
+                </span>
+            </button>
+            
+            <nav class="navigation" aria-labelledby="navigationHeading" hidden>
                 <h2 class="navigationHeading a11yHidden" id="navigationHeading">메인메뉴</h2>
-                <button class="btnMenuopen btnNone" type="button" aria-label="메인메뉴 오픈" title="메인메뉴 열기">
-                    <span class="btnBgrd">
-                        <span class="burgerBar burgerTop"></span>
-                        <span class="burgerBar burgerMiddle"></span>
-                        <span class="burgerBar burgerBottom"></span>
-                    </span>
-                </button>
                 <ul class="menuList resetList">
                     <li class="menuItem"><a href="#" class="menuLink">메뉴</a></li>
                     <li class="menuItem"><a href="#" class="menuLink">이디야멤버스</a></li>
